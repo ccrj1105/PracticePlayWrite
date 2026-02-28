@@ -9,7 +9,7 @@ test('user can register', async ({ page }) => {
     loginPage.navigate();
     await loginPage.clickRegisterLink();
     const registerPage = new RegisterPage(page);
-    await registerPage.fillUserName(faker.internet.username());
+    await registerPage.fillUserName(faker.internet.userName());
     await registerPage.fillPassword(faker.internet.password());
     await registerPage.fillRepeatPassword(faker.internet.password());
     await registerPage.selectGender('M');
