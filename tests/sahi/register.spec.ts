@@ -1,7 +1,7 @@
 import { faker, Faker } from "@faker-js/faker";
 import test, { expect } from "@playwright/test";
-import { LoginPage } from "../pages/LoginPage";
-import { RegisterPage } from "../pages/RegisterPage";
+import { LoginPage } from "../../pages/sahi/LoginPage.ts";
+import { RegisterPage } from "../../pages/sahi/RegisterPage.ts";
 
 test('user can register', async ({ page }) => {
 
