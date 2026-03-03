@@ -1,0 +1,13 @@
+import { Page, Locator } from "@playwright/test";
+
+export class MainPage {
+    private page: Page;
+    private registerCVButton:Locator;
+
+
+    constructor(page: Page) {
+        this.page = page;
+        this.registerCVButton=page.getByRole("button",{name: 'Registrar hoja de vida'});
+
+    }
+}

@@ -31,16 +31,28 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     headless: true,
-    baseURL: 'https://sahitest.com/demo/training/login.htm',
     screenshot: 'only-on-failure',
   },
 
   /* Configure projects for major browsers */
-  projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+projects: [
+  {
+    name: 'sahitest',
+    testMatch: /.*sahi\/.*\.spec\.ts/,
+    use: {
+      baseURL: 'https://sahitest.com/demo/training/login.htm',
+      ...devices['Desktop Chrome'],
     },
+  },
+  {
+    name: 'elempleo',
+    testMatch: /.*elempleo\/.*\.spec\.ts/,
+    use: {
+      baseURL: 'https://www.elempleo.com/co/',
+      ...devices['Desktop Chrome'],
+    },
+  },
+
 
 
 
