@@ -1,4 +1,4 @@
-import { faker, Faker } from "@faker-js/faker";
+import { faker } from "@faker-js/faker";
 import test, { expect } from "@playwright/test";
 import { LoginPage } from "../../pages/sahi/LoginPage.ts";
 import { RegisterPage } from "../../pages/sahi/RegisterPage.ts";
@@ -6,7 +6,7 @@ import { RegisterPage } from "../../pages/sahi/RegisterPage.ts";
 test('user can register', async ({ page }) => {
 
     const loginPage = new LoginPage(page);
-    loginPage.navigate();
+    await loginPage.navigate();
     await loginPage.clickRegisterLink();
     const registerPage = new RegisterPage(page);
     await registerPage.fillUserName(faker.internet.userName());
