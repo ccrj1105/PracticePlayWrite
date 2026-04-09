@@ -1,6 +1,6 @@
 import { Page,Locator } from "@playwright/test";
 
-export class CreateAccount{
+export class CreateAccountPage{
     private page:Page;
     private namesInput:Locator;
     private lastNamesInput:Locator;
@@ -25,6 +25,5 @@ export class CreateAccount{
     async createCV(){
         await this.namesInput.fill('21321');
         await this.lastNamesInput.fill('jfjsjfjsd');
-
     }
 }
